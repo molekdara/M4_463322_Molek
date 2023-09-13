@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Uji loop</h2>
+        <p>Masukkan sebuah angka :</p>
+        Angka : <input type="text" id="angka">
+        <button onclick="klik()">Klik</button>
+        <p id="isi"></p>
+
+        <script>
+            function klik() {
+                var nilai;
+                nilai = document.getElementById("angka").value;
+
+                var val = "";
+                for (var i = 0; i < nilai; i++) { 
+                    val = val + (i + 1) + " "; 
+                }
+                document.getElementById("isi").innerHTML = val;
+            }
+        </script>
+    </body>
+</html>

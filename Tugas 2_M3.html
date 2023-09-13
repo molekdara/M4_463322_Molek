@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 2_M3_Molek</title>
+    <style>
+        #pesanError {
+            display: none;
+            background-color: #ff0000;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Validasi Password</h1>
+    
+    <label for="nama">Nama:</label>
+    <input type="text" id="namaInput">
+    <br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="emailInput">
+    <br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="passwordInput">
+    <br>
+    
+    <button onclick="validasiPassword()">Submit</button>
+    
+    <div id="pesanError"></div>
+
+    <script>
+        function validasiPassword() {
+            var password = document.getElementById("passwordInput").value;
+
+            if (password === "sss") {
+                document.getElementById("pesanError").style.display = "none";
+                window.location.href = "https://molekdara.wixsite.com/molek-gemulai";
+            } else {
+                document.getElementById("pesanError").style.display = "block";
+                document.getElementById("pesanError").innerHTML = "Hayolo password SALAH, coba lagi";
+            }
+        }
+    </script>
+</body>
+</html>

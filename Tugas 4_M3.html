@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 4_M3_Molek</title>
+    <style>
+        body {
+            background-image: url('background.jpeg'); /* Ganti 'background.jpg' dengan URL gambar latar belakang Anda */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #hasilPrima {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Menghitung Bilangan Prima</h1>
+        
+        <label for="angka">Masukkan Angka:</label>
+        <input type="number" id="angkaInput">
+        <br>
+        
+        <button onclick="cariBilanganPrima()">Cari Bilangan Prima</button>
+        
+        <p id="hasilPrima"></p>
+    </div>
+
+    <script>
+        function cariBilanganPrima() {
+            var angka = parseInt(document.getElementById("angkaInput").value);
+            var hasilPrima = [];
+
+            for (var i = 2; i <= angka; i++) {
+                var isPrima = true;
+
+                for (var j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        isPrima = false;
+                        break;
+                    }
+                }
+
+                if (isPrima) {
+                    hasilPrima.push(i);
+                }
+            }
+
+            document.getElementById("hasilPrima").innerHTML = "Bilangan Prima dari 1 sampai " + angka + " adalah: " + hasilPrima.join(", ");
+        }
+    </script>
+</body>
+</html>

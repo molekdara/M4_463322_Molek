@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input dan Tampilkan Teks</title>
+</head>
+<body>
+    <h2>Masukkan sembarang teks</h2>
+
+    <input id="datainput" type="text"/>
+    <input type="button" value="click" onclick="tampilkan();"/>
+    
+    <p id="demo"></p>
+
+    <script>
+        var lol;
+        function baca() {
+            lol = document.getElementById('datainput').value;
+            return lol;
+        }
+        function tampilkan() {
+            document.getElementById("demo").innerHTML = baca();
+        }
+    </script>
+</body>
+</html>

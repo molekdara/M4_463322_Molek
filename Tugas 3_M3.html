@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 3_M3_Molek</title>
+</head>
+<body>
+    <h1>Validasi Nama dan Umur</h1>
+    
+    <label for="nama">Nama:</label>
+    <input type="text" id="namaInput">
+    <br>
+    
+    <label for="umur">Umur:</label>
+    <input type="number" id="umurInput">
+    <br>
+    
+    <button onclick="validasi()">Validasi</button>
+    
+    <p id="hasilValidasi"></p>
+
+    <script>
+        function validasi() {
+            var nama = document.getElementById("namaInput").value;
+            var umur = parseInt(document.getElementById("umurInput").value);
+
+            if (nama === "") {
+                document.getElementById("hasilValidasi").innerHTML = "Isikan nama!!";
+            } else if (umur >=0 && umur <= 5) {
+                document.getElementById("hasilValidasi").innerHTML = "Anda masih bayi";
+            } else if (umur >= 6 && umur <= 15) {
+                document.getElementById("hasilValidasi").innerHTML = "Anda masih anak-anak";
+            } else if (umur >= 16 && umur <= 30) {
+                document.getElementById("hasilValidasi").innerHTML = "Anda masih remaja";
+            } else if (umur >= 31 && umur <= 60) {
+                document.getElementById("hasilValidasi").innerHTML = "Anda sudah dewasa";
+            } else if (umur > 60) {
+                document.getElementById("hasilValidasi").innerHTML = "Anda sudah dewasa kuadrat";
+            } else if (umur <0) {
+                document.getElementById("hasilValidasi").innerHTML = "Anda Game Over";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 1_M3_Molek</title>
+</head>
+<body>
+    <h1>Hitung Faktorial</h1>
+    
+    <label for="angka">Masukkan Angka:</label>
+    <input type="number" id="angkaInput">
+    <br>
+    
+    <button onclick="hitungFaktorial()">Hitung</button>
+    
+    <p id="pertanyaan">masukkan angkanya dulu</p>
+    <p id="jawaban"></p>
+
+    <script>
+        function hitungFaktorial() {
+            var angka = parseInt(document.getElementById("angkaInput").value);
+            var faktorial = 1;
+            
+            if (angka < 0) {
+                document.getElementById("pertanyaan").innerHTML = "Angka faktorial dari " + angka + " tidak tersedia.";
+                document.getElementById("jawaban").innerHTML = "";
+            } else if (angka === 0 || angka === 1) {
+                document.getElementById("pertanyaan").innerHTML = "Angka faktorial dari " + angka + " adalah:";
+                document.getElementById("jawaban").innerHTML = "1";
+            } else {
+                for (var i = 2; i <= angka; i++) {
+                    faktorial *= i;
+                }
+                document.getElementById("pertanyaan").innerHTML = "Angka faktorial dari " + angka + " adalah:";
+                document.getElementById("jawaban").innerHTML = faktorial;
+            }
+        }
+    </script>
+</body>
+</html>

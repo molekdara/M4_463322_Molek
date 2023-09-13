@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> Menangani Input</h1>
+        <p> Masukkan nama dan alamat email Anda:</p>
+        Nama: <input type="text" id="nama"><br>
+        E-mail: <input type="email" id="email"><br>
+        <button onclick="klik()">Klik</button>
+        <br>
+        <p id="isi"></p>
+
+    <script>
+        function klik(){
+            var nama, alamat;
+            nama = document.getElementById("nama").value;
+            alamat = document.getElementById("email").value;
+            var txt = "Salam kenal " + nama + ",<br> alamat email Anda adalah: " + alamat + "<br> Bagaimana kabarnya hari ini?";
+            document.getElementById("isi").innerHTML = txt;
+        }
+    </script>
+    </body>
+</html>
